@@ -20,23 +20,19 @@
     }
 
     &__is-previous {
-        transform: translate(-100%, 0);
+        transform: translate3d(-100%, 0, 0);
         z-index: 2;
     }
     &__is-current {
-        transform: translate(0, 0);
+        transform: translate3d(0, 0, 0);
         z-index: 3;
     }
     &__is-next {
-        transform: translate(100%, 0);  
+        transform: translate3d(100%, 0, 0);  
         z-index: 3;
     }
     &__is-second-next {
-        transform: translate(200%, 0);
+        transform: translate3d(200%, 0, 0);
         z-index: 1;
-    }
-    &__is-after-second-next {
-        opacity: 0;
-        transform: translate(300%, 0);
     }
 }
