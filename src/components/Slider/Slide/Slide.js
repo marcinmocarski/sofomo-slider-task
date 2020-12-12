@@ -4,10 +4,10 @@ import './Slide.scss';
 
 const Slide = ({ imageSrc, index, currentIndex, amount, transitionDuration }) => {
     const classess = classnames("slide", {
-        "is-previous": isPrevious(index, currentIndex, amount),
-        "is-current": isCurrent(index, currentIndex),
-        "is-next": isNext(index, currentIndex, amount) ,
-        "is-second-next": isSecondNext(index, currentIndex, amount)
+        "slide__is-previous": isPrevious(index, currentIndex, amount),
+        "slide__is-current": isCurrent(index, currentIndex),
+        "slide__is-next": isNext(index, currentIndex, amount) ,
+        "slide__is-second-next": isSecondNext(index, currentIndex, amount)
     });
 
     return (

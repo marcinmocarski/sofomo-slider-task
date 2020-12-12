@@ -19,26 +19,23 @@
         width: 50%;
     }
 
-    &.is-second-previous {
-        transform: translate(-200%, 0);
-    }
-    &.is-previous {
+    &__is-previous {
         transform: translate(-100%, 0);
         z-index: 2;
     }
-    &.is-current {
+    &__is-current {
         transform: translate(0, 0);
         z-index: 3;
     }
-    &.is-next {
+    &__is-next {
         transform: translate(100%, 0);  
         z-index: 3;
     }
-    &.is-second-next {
+    &__is-second-next {
         transform: translate(200%, 0);
         z-index: 1;
     }
-    &.is-after-second-next {
+    &__is-after-second-next {
         opacity: 0;
         transform: translate(300%, 0);
     }
