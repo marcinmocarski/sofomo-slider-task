@@ -71,16 +71,10 @@ const Slider = ({ slidesData }) => {
 
     return (
         <div className="slider" onMouseOver={mouseOverHandler} onMouseOut={mouseOutHandler}>
-            <div
-                className="slider--controls slider--controls__previous"
-                onClick={sliderControlsPreviousClickHandler}
-            >
+            <div className="slider--controls slider--controls__previous" onClick={sliderControlsPreviousClickHandler}>
                 PREVIOUS
             </div>
-            <div
-                className="slider--controls slider--controls__next"
-                onClick={sliderControlsNextClickHandler}
-            >
+            <div className="slider--controls slider--controls__next" onClick={sliderControlsNextClickHandler}>
                 NEXT
             </div>
             <div className="slider--content">

@@ -11,9 +11,7 @@ const Slide = ({ imageSrc, index, currentIndex, amount, transitionDuration }) =>
     });
 
     return (
-        <div className={classess} style={{ backgroundImage: `url(${imageSrc})`, transitionDuration: `${transitionDuration}ms` }}>
-
-        </div>
+        <div className={classess} style={{ backgroundImage: `url(${imageSrc})`, transitionDuration: `${transitionDuration}ms` }} />
     )
 }
 
