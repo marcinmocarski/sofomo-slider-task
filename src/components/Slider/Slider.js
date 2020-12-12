@@ -5,6 +5,7 @@ import './Slider.scss';
 const AUTOMATIC_SLIDE_INTERVAL = 1500;
 const SLIDE_TRANSITION_DURATION = 500;
 
+// TODO: problem with touch events on 
 const Slider = ({ slidesData }) => {
     const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
     const [isMouseOver, setIsMouseOver] = useState(false);
@@ -70,7 +71,12 @@ const Slider = ({ slidesData }) => {
     }
 
     return (
-        <div className="slider" onMouseOver={mouseOverHandler} onMouseOut={mouseOutHandler}>
+        <div className="slider" 
+        onMouseOver={mouseOverHandler}
+        onTouchStart={mouseOverHandler} 
+        onMouseOut={mouseOutHandler}
+        onTouchEnd={mouseOutHandler}
+        >
             <div className="slider--controls slider--controls__previous" onClick={sliderControlsPreviousClickHandler}>
                 PREVIOUS
             </div>
