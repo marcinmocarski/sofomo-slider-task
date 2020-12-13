@@ -5,7 +5,7 @@ import './Slider.scss';
 const AUTOMATIC_SLIDE_INTERVAL = 1500;
 const SLIDE_TRANSITION_DURATION = 500;
 
-// TODO: problem with touch events on 
+// TODO: problem with touch events - touchEnd works 50% of times
 const Slider = ({ slidesData }) => {
     const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
     const [isMouseOver, setIsMouseOver] = useState(false);
@@ -15,14 +15,15 @@ const Slider = ({ slidesData }) => {
 
     useEffect(() => {
         const timer = setInterval(() => {
-            if(!isMouseOver) {
+            console.log(isMouseOver);
+            if (!isMouseOver) {
                 sliderControlsNextClickHandler();
             }
         }, AUTOMATIC_SLIDE_INTERVAL);
         return () => clearInterval(timer);
     });
 
-    if(slidesData.length < 5) {
+    if (slidesData.length < 5) {
         slidesData = [...slidesData, ...slidesData, ...slidesData, ...slidesData, ...slidesData]; //nasty hack, i know
     }
 
@@ -46,18 +47,18 @@ const Slider = ({ slidesData }) => {
     }
 
     const sliderControlsPreviousClickHandler = () => {
-        if(isDuringTransition) return;
+        if (isDuringTransition) return;
         blockEventsWhileTransition();
-        if(currentSlideIndex > 0) {
+        if (currentSlideIndex > 0) {
             setCurrentSlideIndex(currentSlideIndex - 1);
         } else {
             setCurrentSlideIndex(slidesData.length - 1);
         }
     }
     const sliderControlsNextClickHandler = () => {
-        if(isDuringTransition) return;
+        if (isDuringTransition) return;
         blockEventsWhileTransition();
-        if(currentSlideIndex < slidesData.length - 1) {
+        if (currentSlideIndex < slidesData.length - 1) {
             setCurrentSlideIndex(currentSlideIndex + 1);
         } else {
             setCurrentSlideIndex(0);
@@ -71,11 +72,11 @@ const Slider = ({ slidesData }) => {
     }
 
     return (
-        <div className="slider" 
-        onMouseOver={mouseOverHandler}
-        onTouchStart={mouseOverHandler} 
-        onMouseOut={mouseOutHandler}
-        onTouchEnd={mouseOutHandler}
+        <div className="slider"
+            onMouseOver={mouseOverHandler}
+            onMouseOut={mouseOutHandler}
+            onTouchStart={mouseOverHandler}
+            onTouchEnd={mouseOutHandler}
         >
             <div className="slider--controls slider--controls__previous" onClick={sliderControlsPreviousClickHandler}>
                 PREVIOUS
