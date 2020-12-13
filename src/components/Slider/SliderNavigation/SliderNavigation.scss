@@ -1,0 +1,22 @@
+@import "../../../base/variables.scss";
+
+$sliderNavigationItemSize: 10px;
+
+.slider-navigation {
+
+    &__item {
+        width: $sliderNavigationItemSize;
+        height: $sliderNavigationItemSize;
+
+        background-color: #FFFFFF;
+        border-radius: 50%;
+        cursor: pointer;
+        display: inline-block;
+        margin: 0 calc(#{$spacing} / 6);
+        transition: background-color 0.15s ease-in;
+
+        &--current {
+            background-color: #AAAAAA;
+        }
+    }
+}
