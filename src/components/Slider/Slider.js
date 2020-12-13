@@ -6,7 +6,7 @@ import "./Slider.scss";
 import iconNext from "../../svg/icon-next.svg";
 
 const AUTOMATIC_SLIDE_INTERVAL = 1500;
-const SLIDE_TRANSITION_DURATION = 500;
+const SLIDE_TRANSITION_DURATION = 400; // that's maximum transition time according to UX designers
 const SWIPE_EVENT_MIN_TOUCH_DISTANCE = 100;
 
 // TODO stop automatic slide transition on tab change
@@ -97,6 +97,7 @@ const Slider = ({ slidesData, title, subtitle }) => {
     }
   }
   const navItemClickHandler = (slideIndex) => {
+      // #ASKCLIENT: That's not in requirements but I'm sure it's nice to have
     if (slideIndex === currentSlideIndex) return;
     const isAfterCurrent = slideIndex > currentSlideIndex;
     if (isAfterCurrent) {

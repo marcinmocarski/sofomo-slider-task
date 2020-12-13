@@ -12,7 +12,8 @@
     background-position: center center;
     float: left;
     transition: transform;
-    transition-timing-function: ease-in;
+    // changing slides is more about slides entering than leaving, so we should use ease-out easing
+    transition-timing-function: ease-out;
 
 
     @include md {

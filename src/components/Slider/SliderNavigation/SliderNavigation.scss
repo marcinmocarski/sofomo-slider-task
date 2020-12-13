@@ -13,7 +13,7 @@ $sliderNavigationItemSize: 10px;
         cursor: pointer;
         display: inline-block;
         margin: 0 calc(#{$spacing} / 6);
-        transition: background-color 0.15s ease-in;
+        transition: background-color 0.15s ease-out; 
 
         &--current {
             background-color: #AAAAAA;
