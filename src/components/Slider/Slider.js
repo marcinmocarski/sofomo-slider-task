@@ -15,7 +15,6 @@ const Slider = ({ slidesData }) => {
 
     useEffect(() => {
         const timer = setInterval(() => {
-            console.log(isMouseOver);
             if (!isMouseOver) {
                 sliderControlsNextClickHandler();
             }
